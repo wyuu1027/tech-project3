@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YY 的個人首頁</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Noto Sans TC', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fceaff, #c6f4ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      padding: 30px 25px;
+      text-align: center;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      color: #3b2e5a;
+      font-weight: 800;
+      margin-bottom: 6px;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    p.desc {
+      color: #6b5b95;
+      margin-bottom: 25px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #7f58af;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 14px 0;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 15px rgba(127, 88, 175, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+      user-select: none;
+    }
+
+    .link-btn:hover {
+      background-color: #9b7fd1;
+      box-shadow: 0 8px 25px rgba(155, 127, 209, 0.6);
+      transform: scale(1.05);
+    }
+
+    .link-btn span.icon {
+      margin-right: 12px;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    /* 各平台顏色 */
+    .github {
+      background: #333;
+      box-shadow: 0 5px 15px rgba(51, 51, 51, 0.4);
+    }
+    .github:hover {
+      background: #555;
+      box-shadow: 0 8px 25px rgba(85, 85, 85, 0.6);
+    }
+    .email {
+      background: #d44638;
+      box-shadow: 0 5px 15px rgba(212, 70, 56, 0.4);
+    }
+    .email:hover {
+      background: #e75c48;
+      box-shadow: 0 8px 25px rgba(231, 92, 72, 0.6);
+    }
+    .linkedin {
+      background: #0077b5;
+      box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
+    }
+    .linkedin:hover {
+      background: #008bd3;
+      box-shadow: 0 8px 25px rgba(0, 139, 211, 0.6);
+    }
+    .instagram {
+      background: #e4405f;
+      box-shadow: 0 5px 15px rgba(228, 64, 95, 0.4);
+    }
+    .instagram:hover {
+      background: #f05a74;
+      box-shadow: 0 8px 25px rgba(240, 90, 116, 0.6);
+    }
+
+    /* 響應式手機 */
+    @media (max-width: 480px) {
+      .container {
+        max-width: 90vw;
+        padding: 25px 15px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .link-btn {
+        font-size: 1rem;
+        padding: 12px 0;
+      }
+      .link-btn span.icon {
+        font-size: 1.3rem;
+        margin-right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <h1>YY 的個人首頁</h1>
+    <p class="desc">喜歡美妝與時尚衣著的高三學生</p>
+    <div class="links">
+      <a class="link-btn github" href="https://github.com/你的帳號" target="_blank" rel="noopener noreferrer">
+        <span class="icon">🐱</span> GitHub
+      </a>
+      <a class="link-btn email" href="mailto:你的Email@example.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon">📧</span> Email
+      </a>
+      <a class="link-btn linkedin" href="https://linkedin.com/in/你的帳號" target="_blank" rel="noopener noreferrer">
+        <span class="icon">🔗</span> LinkedIn
+      </a>
+      <a class="link-btn instagram" href="https://instagram.com/你的帳號" target="_blank" rel="noopener noreferrer">
+        <span class="icon">📸</span> Instagram
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // 進階動態：滾動時container輕微浮動效果
+    const container = document.getElementById('container');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      container.style.transform = `translateY(${Math.min(scrollY * 0.3, 15)}px)`;
+    });
+  </script>
+</body>
+</html>
